@@ -12,6 +12,7 @@ module.exports = function (app) {
       db.schema.createTable(tableName, (table) => {
         table.increments('id');
         table.string('name').notNullable();
+        table.string('symbol').notNullable();
         table.timestamp('createdAt').notNullable().defaultTo(db.raw('now()'));
         table.timestamp('updatedAt').notNullable().defaultTo(db.raw('now()'));
       })

@@ -13,6 +13,8 @@ module.exports = function (app) {
         table.increments('id');
         table.string('name').notNullable().unique();
         table.string('code').notNullable().unique();
+        table.integer('currencyId').notNullable();
+        table.foreign('currencyId').references('currencies.id');
         table.timestamp('createdAt').notNullable().defaultTo(db.raw('now()'));
         table.timestamp('updatedAt').notNullable().defaultTo(db.raw('now()'));
       })
