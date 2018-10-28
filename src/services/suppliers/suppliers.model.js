@@ -15,6 +15,9 @@ module.exports = function (app) {
         table.string('lastName').notNullable();
         table.enu('gender', ['female', 'male']);
         table.string('about').notNullable();
+        table.string('phoneNumber');
+        table.integer('productId').notNullable();
+        table.foreign('productId').references('products.id');
 
         table.integer('organizationId').notNullable();
         table.foreign('organizationId').references('organizations.id');

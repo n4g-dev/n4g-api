@@ -12,6 +12,7 @@ module.exports = function (app) {
       db.schema.createTable(tableName, (table) => {
         table.increments('id');
         table.string('name').notNullable();
+        table.text('about');
         table.string('description');
       })
         .then(() => console.log(`Created ${tableName} table`))

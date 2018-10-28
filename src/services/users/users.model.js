@@ -19,7 +19,7 @@ module.exports = function (app) {
         table.string('password').notNullable();
         table.integer('countryId').notNullable();
         table.foreign('countryId').references('countries.id');
-        table.enu('role', ['employee', 'admin', 'collector']);
+        table.enu('roles', ['employee', 'admin', 'collector']);
         table.enu('status', ['active', 'inactive', 'blocked', 'frozen']);
         table.enu('confirmed', [true, false]).notNullable().defaultTo(false);
         table.timestamp('createdAt').notNullable().defaultTo(db.raw('now()'));
