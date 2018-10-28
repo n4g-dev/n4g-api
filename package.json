@@ -1,6 +1,6 @@
 {
   "name": "n4g-api",
-  "description": "API for n4g apps and services",
+  "description": "API for n4g apps and services.",
   "version": "0.0.1",
   "homepage": "",
   "main": "src",
@@ -9,7 +9,7 @@
   ],
   "author": {
     "name": "Salifu Mutaru",
-    "email": "salifumutaru@gmail.com"
+    "email": "n4g.dev@gmail.com"
   },
   "contributors": [],
   "bugs": {},
