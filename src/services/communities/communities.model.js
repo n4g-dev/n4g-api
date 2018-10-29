@@ -11,8 +11,8 @@ module.exports = function (app) {
       db.schema.createTable(tableName, (table) => {
         table.increments('id');
         table.string('name').notNullable();
-        table.integer('regionId');
-        table.foreign('regionId').references('regions.id');
+        table.integer('districtId').notNullable();
+        table.foreign('districtId').references('districts.id');
       })
         .then(() => console.log(`Created ${tableName} table`))
         .catch(e => console.error(`Error creating ${tableName} table`, e));
