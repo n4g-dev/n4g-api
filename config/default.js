@@ -3,7 +3,7 @@ module.exports = {
   port: process.env.PORT,
   public: '../public/',
   paginate: {
-    default: 10,
+    default: 20,
     max: 50
   },
   postgres: {
