@@ -64,18 +64,6 @@ app.configure(channels);
 app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
 
-app.use('/fetch_users_setup', async (req, res) => {
-    try {
-        const users = await knexraw('users').find({ status: 'active' });
-        if (users) {
-            res.json(users);
-        } else {
-            res.status(403).json({ status: 'failed' });
-        }
-    } catch (err) {
-        res.status(403).json({ status: 'failed' });
-    }
-});
 
 app.hooks(appHooks);
 
