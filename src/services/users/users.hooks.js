@@ -4,7 +4,7 @@ const local = require('feathers-authentication-local');
 module.exports = {
   before: {
     all: [],
-    find: [],
+    find: [auth.hooks.authenticate('jwt')],
     get: [auth.hooks.authenticate('jwt')],
     create: [
       local.hooks.hashPassword({ passwordField: 'password' })
