@@ -34,6 +34,15 @@ module.exports = {
       directory: `${__dirname}/db/seeds/test`,
     },
   },
+    app: {
+        client: 'sqlite',
+        connection: {
+          filename: '/Users/salm/Documents/Businesses/N4G/collector/android/app/src/main/assets/appDb.db'
+        },
+        migrations: {
+            directory: `${__dirname}/db/appMigrations`,
+        },
+    },
   production: {
     client: 'pg',
     connection: process.env.CUSTOMCONNSTR_DB,
