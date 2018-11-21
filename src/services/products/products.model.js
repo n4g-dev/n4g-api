@@ -14,6 +14,8 @@ module.exports = function (app) {
         table.string('name').notNullable();
         table.text('about');
         table.string('description');
+        table.timestamp('createdAt').notNullable().defaultTo(db.raw('now()'));
+        table.timestamp('updatedAt').notNullable().defaultTo(db.raw('now()'));
       })
         .then(() => console.log(`Created ${tableName} table`))
         .catch(e => console.error(`Error creating ${tableName} table`, e));

@@ -1,7 +1,7 @@
 
 exports.up = async (knex) => {
 	await knex.schema.createTable('transits', (table) => {
-        table.increments('id');
+        table.integer('id').primary();
         table.timestamp('started').notNullable();
         table.string('journey').comment('String of gps locations throughout the journey');
         table.timestamp('ended');

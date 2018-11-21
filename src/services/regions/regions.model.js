@@ -13,6 +13,8 @@ module.exports = function (app) {
         table.string('name').notNullable();
         table.integer('countryId');
         table.foreign('countryId').references('countries.id');
+        table.timestamp('createdAt').notNullable().defaultTo(db.raw('now()'));
+        table.timestamp('updatedAt').notNullable().defaultTo(db.raw('now()'));
       })
         .then(() => console.log(`Created ${tableName} table`))
         .catch(e => console.error(`Error creating ${tableName} table`, e));

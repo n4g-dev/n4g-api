@@ -1,7 +1,7 @@
 
 exports.up = async (knex) => {
 	await knex.schema.createTable('districts', (table) => {
-        table.increments('id');
+        table.integer('id').primary();
         table.string('name').notNullable();
         table.integer('regionId');
         table.foreign('regionId').references('regions.id');
