@@ -19,7 +19,8 @@ exports.up = async (knex) => {
         table.integer('currencyId').notNullable();
         table.foreign('currencyId').references('currencies.id');
         table.float('yield').notNullable();
-        table.enu('status', ['collected', 'shipped', 'delivered']);
+        table.float('sacs');
+        table.enu('status', ['collected', 'shipped', 'delivered']).notNullable().defaultTo('collected');
 		table.datetime('createdAt').notNullable().defaultTo(knex.fn.now());
 		table.datetime('updatedAt').notNullable().defaultTo(knex.fn.now());
 	});

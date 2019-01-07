@@ -37,7 +37,7 @@ module.exports = {
     app: {
         client: 'sqlite',
         connection: {
-          filename: '/Users/salm/Documents/Businesses/N4G/collector/android/app/src/main/assets/appDb.db'
+          filename: '/Users/salm/Documents/Businesses/N4G/n4gcollector/android/app/src/main/assets/appDb.db'
         },
         migrations: {
             directory: `${__dirname}/db/appMigrations`,
