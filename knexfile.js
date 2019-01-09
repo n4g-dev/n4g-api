@@ -9,6 +9,16 @@ module.exports = {
       directory: `${__dirname}/db/seeds/development`,
     },
   },
+  new: {
+    client: 'pg',
+    connection: process.env.POSTGRESQLCONNSTR_DB_NEW,
+    migrations: {
+      directory: `${__dirname}/db/migrations`,
+    },
+    seeds: {
+      directory: `${__dirname}/db/seeds/development`,
+    },
+  },
   test: {
     client: 'pg',
     connection: process.env.POSTGRESQLCONNSTR_DB,

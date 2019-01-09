@@ -1,13 +1,21 @@
-const knex = require('./knex');
+const config = require('../knexfile.js');
 
 
-knex('suppliers').update({ birthDate: '1980-11-12' }).then((res) => {
-    console.log(res);
-});
+const olddb = require('knex')(config.development);
+const newdb = require('knex')(config.new);
 
+
+const table = 'transactions';
 
 /*
-knex('organizations').first().then((res) => {
-    console.log(res);
+olddb(table).then((results) => {
+    console.log(`Found ${results.length} ${table}`);
+    newdb.transaction((tr) => {
+        return newdb.batchInsert(table, results, 300)
+        .transacting(tr)
+    })
+    .then(() => { console.log(`Successfully inserted ${table}`); })
+    .catch((error) => console.error(error));
 });
+
 */
