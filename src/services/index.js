@@ -9,6 +9,7 @@ const products = require('./products/products.service.js');
 const transactions = require('./transactions/transactions.service.js');
 const transits = require('./transits/transits.service.js');
 const communities = require('./communities/communities.service.js');
+const languages = require('./languages/languages.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(suppliers);
@@ -22,4 +23,5 @@ module.exports = function (app) {
   app.configure(transactions);
   app.configure(transits);
   app.configure(communities);
+  app.configure(languages);
 };

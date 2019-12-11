@@ -12,7 +12,7 @@ for(let key in supplierYields) {
     supplierYields[key]['2016'] = parseInt(supplierYields[key]['2016']);
     supplierYields[key]['2017'] = parseInt(supplierYields[key]['2017']);
 }
-// suppliers = JSON.parse(suppliers);
+suppliers = JSON.parse(suppliers);
 
 // console.log(suppliers.length);
 /*
